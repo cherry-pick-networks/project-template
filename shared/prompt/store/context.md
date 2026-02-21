@@ -22,7 +22,7 @@ All tools and models should use this file only; do not duplicate these rules in 
   - **Prefix**: Scope (global, shared, system, module, component) or Layer or Context
   - **Infix**: Actor, Action, or Entity (e.g. prompt, document, service)
   - **Suffix**: Artifact, Policy, or Meta (e.g. store, config, test)
-- **This file**: `shared/prompt/context.md` (shared = Scope, prompt = Entity)
+- **This file**: `shared/prompt/store/context.md` (shared = Scope, prompt = Entity, store = Artifact)
 - **Exceptions**: .git, .cursor, node_modules, dist, build, coverage, vendor, .cache (confirm per repo)
 - Do not add a fourth tier. Do not use forbidden segments (e.g. core in Context; cache as Suffix).
 
@@ -42,7 +42,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - **Language**: English only for code, comments, docstrings, UI/log strings, and docs.
 - **Commit message**: `<type>[(scope)]: <description>`; imperative, lowercase.  
   Types: feat, fix, docs, chore, refactor, perf, test, ci, build. Scope optional (e.g. module or feature flag).
-- **Dependencies**: Add only from the project’s official list (e.g. deno.json imports); update that list first. No new deps without approval and stable-library criteria.
+- **Dependencies**: Add only from the project's official list (e.g. deno.json imports); update that list first. No new deps without approval and stable-library criteria.
 - **Scope**: Do not add modules, API routes, or infrastructure unless they are in the scope document; update the scope doc first, then implement.
 - **Conventions**: Follow existing formatting, naming, and structure; prefer the simplest option (KISS); be consistent.
 
@@ -94,14 +94,14 @@ All tools and models should use this file only; do not duplicate these rules in 
 ## 9. Context and handoff
 
 - **New topic**: Start a new conversation when the topic or task changes to keep context focused.
-- **Handoff**: For long-running or multi-session work, write a single handoff doc (e.g. `shared/prompt/handoff.md` or root `HANDOFF.md`) with: goal, progress, what was tried, what failed, next steps. New sessions attach only that file to continue.
+- **Handoff**: For long-running or multi-session work, write a single handoff doc (e.g. `shared/prompt/documentation/handoff.md` or root `HANDOFF.md`) with: goal, progress, what was tried, what failed, next steps. New sessions attach only that file to continue.
 - **Branching experiments**: When trying a different approach from a point in time, fork the conversation or record the branch point in the handoff doc.
 
 ---
 
 ## 10. Input and output
 
-- **Inaccessible or private content**: If a URL or resource cannot be fetched directly, use “select all → copy → paste” into the chat (or attach the file).
+- **Inaccessible or private content**: If a URL or resource cannot be fetched directly, use "select all → copy → paste" into the chat (or attach the file).
 - **Output format**: Prefer Markdown for reports and docs; use a neutral format (e.g. paste via Notion) when copying to platforms that do not accept Markdown.
 - **Getting output out**: Copy from terminal, or write to a file and open in editor; use `/copy` or equivalent if the tool provides it.
 
@@ -110,13 +110,13 @@ All tools and models should use this file only; do not duplicate these rules in 
 ## 11. Quality and safety
 
 - **Abstraction level**: Choose the right depth: high-level for one-off or low-risk work; file/function/deps-level for critical or complex code.
-- **Simplify**: Ask “why this change?” or “simplify unnecessary parts” when the change set is large or unclear. Prefer minimal, clear code and prose.
+- **Simplify**: Ask "why this change?" or "simplify unnecessary parts" when the change set is large or unclear. Prefer minimal, clear code and prose.
 - **Dangerous commands**: Do not approve broad or destructive commands without explicit need; audit approved commands periodically (see §7).
 
 ---
 
 ## 12. Maintenance
 
-- **Single source**: Add or change rules and habits only in this file (`shared/prompt/context.md`). Do not duplicate in Cursor Rules or other tool configs; reference this file instead.
+- **Single source**: Add or change rules and habits only in this file (`shared/prompt/store/context.md`). Do not duplicate in Cursor Rules or other tool configs; reference this file instead.
 - **Review**: Review this file periodically (e.g. quarterly); add repeated instructions as they appear; remove or update outdated lines.
 - **External tips**: Use external guides (e.g. claude-code-tips) as reference only; write only the chosen practices here.
