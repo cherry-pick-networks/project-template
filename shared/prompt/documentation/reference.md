@@ -17,6 +17,8 @@ Use what fits your environment and habits.
 
 - **Tips-derived usage**: Scripts and workflows from the implementation plan (e.g. status line, handoff workflow, setup script, dx plugin).  
   → **[tips-usage.md](tips-usage.md)**
+- **Tips we reference but do not adopt (yet)**: Short descriptions of optional claude-code-tips; add to tips-usage or context when the team decides.  
+  → **[tips-reference.md](tips-reference.md)**
 
 ---
 
