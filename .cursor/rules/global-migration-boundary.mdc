@@ -6,22 +6,6 @@ description: |
 alwaysApply: true
 ---
 
-When to migrate (diagnosis):
-  rule files that mix axes (e.g. two suffixes in one name or one file)
-  or use forbidden prefix/segment must be refactored; plan first, then
-  execute; do not rename or split without a migration plan.
-Plan before execute:
-  write a migration plan: for each current file, list target filename(s)
-  with axis (prefix, infix, suffix), content responsibility per new
-  file, and which current files will be removed; do not execute
-  renames or splits without this mapping.
-Execute order:
-  create all new rule files with split content first; only after that
-  delete the old files; one logical migration (one plan) per commit.
-Naming:
-  new rule file names must follow global-document-format and
-  global-document-naming; use infix from Actor/Action/Entity where it
-  clarifies focus (e.g. document, event, agent).
-No scope doc change:
-  adding or refactoring .cursor/rules does not require docs/scope.md
-  change; scope doc is for modules, API routes, infrastructure only.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§J. Migration boundary**.
+Do not duplicate the rule text here.

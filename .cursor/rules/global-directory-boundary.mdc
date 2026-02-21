@@ -6,52 +6,6 @@ description: |
 alwaysApply: false
 ---
 
-Implementation plan — directory structure rule
-
-Purpose:
-  Apply a single rule to all directory creation except exceptions;
-  keep structure as prefix → infix → suffix for discoverability and maintenance.
-
-Scope:
-  All directories not in the exception list (root and any depth).
-  "Level" means directory tiers only: prefix, infix, suffix.
-  Root is not counted as a level; max depth is 3 tiers (prefix / infix / suffix).
-
-Rule content — structure:
-  Allowed forms (exactly one of three):
-    prefix/
-    prefix/infix/
-    prefix/infix/suffix/
-  Order fixed: prefix then infix then suffix; no fourth tier.
-
-Rule content — naming:
-  Each tier name must use only approved values for that axis
-  (prefix / infix / suffix); see global-document-naming.
-  Lowercase; one hyphen between words; no underscores or spaces.
-
-Exceptions:
-  Maintain an explicit exception list; same list for docs and tooling.
-  Typical entries: .git, .cursor, node_modules, dist, build, coverage,
-  vendor, .cache (confirm per project). Update list and any validator together.
-
-Documentation:
-  Place rule text in .cursor/rules (e.g. this file or global-document-format).
-  State: scope, "max 3 tiers" (prefix/infix/suffix only; root not counted),
-  the three allowed forms, order, no fourth tier, naming reference, exception list.
-
-Validation (optional):
-  Script: walk directories from root; skip exception list; assert remaining
-  paths match prefix/(infix/)(suffix/) and tier names in allowed sets; exit 1 on failure.
-  Run in pre-commit or CI.
-
-Agent / tool behavior:
-  When creating directories, use only the three allowed forms for non-excepted paths;
-  use only approved axis values per global-document-naming.
-  Optionally: recommend a "new directory" helper script.
-
-Execution order:
-  (1) Finalize exception list per project.
-  (2) Write rule text (this plan reflected; "three tiers" = prefix/infix/suffix only).
-  (3) Add or update rule in .cursor/rules.
-  (4) Optionally add validation script and wire exceptions.
-  (5) Optionally add pre-commit or CI check.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§F. Directory structure and exceptions**.
+Do not duplicate the rule text here.

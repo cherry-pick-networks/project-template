@@ -6,19 +6,6 @@ description: |
 alwaysApply: true
 ---
 
-When to commit (mandatory):
-  commit at each feature-flag boundary; do not wait until the full task
-  is done; one logical unit (one flag or one cohesive change) per commit.
-Must commit before next unit:
-  before starting the next feature-flag or logical unit, you must run
-  git add and git commit for the current changes; do not implement the
-  next flag without committing the current one.
-Procedure for multi-flag work:
-  (1) implement one feature-flag unit only; (2) run git status, git add,
-  git commit with message per this rule; (3) only after commit succeeds,
-  proceed to the next unit. No batch commit at the end of the task.
-Session end:
-  at the end of every session, always output a commit message that follows
-  this rule (type[(scope)]: description; imperative, lowercase) in a fenced
-  code block so the user can copy it; do this every time, do not skip; do not
-  run git commit unless the user explicitly asks.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§B. Commit and session boundary**.
+Do not duplicate the rule text here.

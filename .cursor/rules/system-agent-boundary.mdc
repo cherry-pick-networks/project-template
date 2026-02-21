@@ -6,6 +6,6 @@ description: |
 alwaysApply: true
 ---
 
-Agent and scope:
-  agent must not extend scope arbitrarily; propose scope doc changes
-  for human approval, then implement only after scope is updated.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§L. Agent and scope**.
+Do not duplicate the rule text here.

@@ -7,10 +7,6 @@ description: |
 alwaysApply: true
 ---
 
-Scope document:
-  the single source of truth for in-scope modules, API surface, and
-  infrastructure is docs/scope.md; update that doc before adding.
-Scope-bound implementation:
-  do not add new modules, API routes (routers), or infrastructure
-  (broker, extra DB, queue, search engine) unless they are listed in
-  docs/scope.md; add them to docs/scope.md first, then implement.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§K. Scope document boundary**.
+Do not duplicate the rule text here.

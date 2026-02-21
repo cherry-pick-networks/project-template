@@ -6,11 +6,6 @@ description: |
 alwaysApply: true
 ---
 
-Dependency addition:
-  do not add dependencies arbitrarily; only add if (a) listed in the project
-  official dependency list, or (b) the addition meets all mandatory
-  stable-library criteria below. Agent must not extend the official list
-  without human approval.
-Official list:
-  the project maintains an official list of allowed dependencies (deno.json
-  imports and optionally docs); new entries require updating that list first.
+This rule is defined in `shared/prompt/store/context.md`.
+Read that file and follow **§G. Dependency constraint**.
+Do not duplicate the rule text here.
