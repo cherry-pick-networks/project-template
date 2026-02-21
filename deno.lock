@@ -1,23 +1,70 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@david/code-block-writer@13": "13.0.3",
+    "jsr:@hono/hono@4": "4.12.0",
     "jsr:@std/assert@1": "1.0.19",
-    "jsr:@std/internal@^1.0.12": "1.0.12"
+    "jsr:@std/fs@1": "1.0.23",
+    "jsr:@std/internal@^1.0.12": "1.0.12",
+    "jsr:@std/path@1": "1.1.4",
+    "jsr:@std/path@^1.1.4": "1.1.4",
+    "jsr:@ts-morph/common@~0.28.1": "0.28.1",
+    "jsr:@ts-morph/ts-morph@27": "27.0.2",
+    "jsr:@zod/zod@4": "4.3.6"
   },
   "jsr": {
+    "@david/code-block-writer@13.0.3": {
+      "integrity": "f98c77d320f5957899a61bfb7a9bead7c6d83ad1515daee92dbacc861e13bb7f"
+    },
+    "@hono/hono@4.12.0": {
+      "integrity": "a09c74c4a15539f159ea386b5804fd88d984805aa74e4d847a136ba42487412b"
+    },
     "@std/assert@1.0.19": {
       "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
       "dependencies": [
         "jsr:@std/internal"
       ]
     },
+    "@std/fs@1.0.23": {
+      "integrity": "3ecbae4ce4fee03b180fa710caff36bb5adb66631c46a6460aaad49515565a37",
+      "dependencies": [
+        "jsr:@std/internal",
+        "jsr:@std/path@^1.1.4"
+      ]
+    },
     "@std/internal@1.0.12": {
       "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
+    },
+    "@std/path@1.1.4": {
+      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@ts-morph/common@0.28.1": {
+      "integrity": "9d4a091c590221b21de811d8aa38f624a91706945d40e730de252c24051e4399",
+      "dependencies": [
+        "jsr:@std/fs",
+        "jsr:@std/path@1"
+      ]
+    },
+    "@ts-morph/ts-morph@27.0.2": {
+      "integrity": "4927e154fbc23bb3a4299aaea2ec47169a851e59c720bf08bd9b517b15384e7c",
+      "dependencies": [
+        "jsr:@david/code-block-writer",
+        "jsr:@ts-morph/common"
+      ]
+    },
+    "@zod/zod@4.3.6": {
+      "integrity": "7144e5e11f8ffc3cf6e2fca624f6597a8762898aac9868cc8938e9398b96ffe4"
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@hono/hono@4",
+      "jsr:@std/assert@1",
+      "jsr:@ts-morph/ts-morph@27",
+      "jsr:@zod/zod@4"
     ]
   }
 }
