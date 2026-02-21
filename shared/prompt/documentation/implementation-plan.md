@@ -173,6 +173,35 @@
 
 ---
 
+### Phase 10: Tips-derived additions (optional infrastructure)
+
+These items correspond to "implementable but often missing" tips; add only what the project adopts. No new dependencies without §G; scripts under **shared/prompt/scripts/** (prefix/infix/suffix compliant) or documented as local/personal only.
+
+- **10.1 (Tip 0 — Status line)**  
+  Optional status-line script (e.g. **shared/prompt/scripts/context-bar.sh**) showing model, directory, git branch/status, token usage if available. Document how to run or source it in context.md or this plan.
+- **10.2 (Tip 8 — Handoff workflow)**  
+  Document **handoff workflow**: when to create/update the handoff file (e.g. before switching agent or topic), required fields (goal, progress, tried/failed, next steps), and that new sessions attach only that file. Optionally mention `/handoff` (e.g. dx plugin) if used.
+- **10.3 (Tip 11 — Blocked sites fallback)**  
+  Document fallback for blocked or private URLs (e.g. reddit-fetch skill or Gemini CLI). One line in context.md or **shared/prompt/documentation/tips-usage.md**.
+- **10.4 (Tip 15 — System prompt slim)**  
+  If applicable, document procedure to slim system prompt (e.g. minified CLI bundle or `system-prompt/` usage). Prefer local/personal only; do not add repo scripts without scope doc update (§K).
+- **10.5 (Tip 23 — Clone / half-clone)**  
+  Document use of clone or half-clone (script or skill) for long conversations; optionally note auto-suggest when context exceeds a threshold. Reference in context.md or tips-usage.md.
+- **10.6 (Tip 30 — Context review)**  
+  Add to maintenance: periodic review of context.md with **conversation-based improvement** (e.g. "repeated instructions from recent chats → candidate lines for context.md"). Optionally use a review skill (e.g. review-claudemd) if available.
+- **10.7 (Tip 33 — Approved commands audit)**  
+  In addition to the existing dangerous-commands policy, document running **cc-safe** (e.g. `npx cc-safe .`) or equivalent on a schedule (e.g. before PR, monthly). Keep in context.md §7 or §11.
+- **10.8 (Tip 34 — Tests and TDD)**  
+  State in context.md that **tests and TDD** are recommended: write tests (failing first), commit, then implement. Strengthen Phase 3.4 wording so tests + TDD cycle are explicit expectations where applicable.
+- **10.9 (Tip 44 — dx plugin)**  
+  Document **dx plugin** installation and use if adopted (e.g. `claude plugin install dx@ykdojo`). Place in tips-usage.md or README; reference from context.md if needed.
+- **10.10 (Tip 45 — Setup script)**  
+  Optional **setup.sh** (e.g. under **shared/prompt/scripts/**) to configure in one run: status line hook, cc-safe check, aliases, --fs or other flags. Document prerequisites and how to run.
+
+**Deliverable**: Chosen tips implemented as scripts or one-line references in context.md; optional docs in **shared/prompt/documentation/tips-usage.md**. No new scope-bound modules/API/infra (§K).
+
+---
+
 ## 6. Commit and session rules (from project rules)
 
 - **§B**: One logical unit per commit; commit at each phase (or feature-flag) boundary before starting the next.
@@ -201,6 +230,12 @@ feat(shared/prompt): add single AI context file and directory
 | 6 | Handoff template and path (e.g. shared/prompt/documentation/handoff.md or root HANDOFF.md) | Document in context.md |
 | 7 | MCP/Playwright usage described in **shared/prompt/store/context.md** | Protocol/CLI only |
 | 8 | Review cadence for **shared/prompt/store/context.md** defined | e.g. quarterly |
+| 9 | (Phase 10) Status line script optional; path **shared/prompt/scripts/context-bar.sh** if used | Tip 0 |
+| 10 | (Phase 10) Handoff **workflow** (when to write/update, required fields) documented | Tip 8 |
+| 11 | (Phase 10) Blocked-sites fallback (e.g. reddit-fetch, Gemini CLI) one-line ref if used | Tip 11 |
+| 12 | (Phase 10) Approved-commands audit: **cc-safe** (e.g. `npx cc-safe .`) and schedule in context.md | Tip 33 |
+| 13 | (Phase 10) Tests + TDD cycle stated as expectation in **shared/prompt/store/context.md** | Tip 34 |
+| 14 | (Phase 10) Optional **setup.sh** under **shared/prompt/scripts/**; tips-usage.md for dx, clone, etc. | Tip 45, 44, 23 |
 
 ---
 
@@ -218,3 +253,4 @@ feat(shared/prompt): add single AI context file and directory
 - **Git/PR/CI**: Use **gh** and Git; same workflow for any AI that can run the terminal.
 - **Integrations**: Prefer **MCP** and **Playwright**; document usage in context.md.
 - **Commits**: One unit per phase; commit message per §A.
+- **Tips-derived (Phase 10)**: Optional status line, handoff workflow, cc-safe, TDD wording, setup.sh, tips-usage.md; scripts under **shared/prompt/scripts/** if used.

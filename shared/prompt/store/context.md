@@ -58,6 +58,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - `gh run view` — inspect CI run (e.g. after failure)
 - `git worktree add <path> <branch>` — work on another branch in a separate directory
 - `realpath <path>` — resolve absolute path when referring to files outside current tree
+- **Optional (Phase 10)**: Status line `shared/prompt/scripts/context-bar.sh`; setup `shared/prompt/scripts/setup.sh`; see `shared/prompt/documentation/tips-usage.md` for tips-derived options.
 
 ---
 
@@ -66,7 +67,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - **Decompose**: Break large work into small steps (A → A1, A2, A3 → B). Tackle one step at a time.
 - **Plan then prototype**: Decide high-level approach and structure before coding; use a short plan or prototype to validate approach.
 - **Write–test cycle**: Implement, run tests (or manual check), fix failures, repeat. For automation, define how to verify results.
-- **TDD (optional)**: Write failing tests first, commit tests, then implement until they pass.
+- **Tests and TDD**: Prefer writing tests (failing first), committing the test change, then implementing until they pass. Treat tests and this TDD cycle as the default for non-trivial code.
 - **Verify output**: For research or non-code output, ask to verify claims and summarize (e.g. table of what was verified).
 
 ---
@@ -78,7 +79,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - **Parallel work**: Use `git worktree add` when working on multiple branches; one worktree per branch/dir.
 - **PR review**: Use `gh pr view` and `gh pr diff`; review file-by-file or step-by-step as needed.
 - **CI failure**: Use `gh run view`, logs, and (if needed) `gh` GraphQL/API to find root cause, flakiness, or breaking commit.
-- **Dangerous commands**: Audit approved commands periodically (e.g. patterns like `rm -rf`, `sudo`, `chmod 777`, `curl | sh`, `git reset --hard`). Prefer a script or checklist; do not approve broad destructive permissions.
+- **Dangerous commands**: Audit approved commands periodically (e.g. patterns like `rm -rf`, `sudo`, `chmod 777`, `curl | sh`, `git reset --hard`). Run **cc-safe** (e.g. `npx cc-safe .`) on a schedule (e.g. before opening a PR, monthly). Prefer a script or checklist; do not approve broad destructive permissions.
 
 ---
 
@@ -94,14 +95,14 @@ All tools and models should use this file only; do not duplicate these rules in 
 ## 9. Context and handoff
 
 - **New topic**: Start a new conversation when the topic or task changes to keep context focused.
-- **Handoff**: For long-running or multi-session work, write a single handoff doc (e.g. `shared/prompt/documentation/handoff.md` or root `HANDOFF.md`) with: goal, progress, what was tried, what failed, next steps. New sessions attach only that file to continue.
+- **Handoff**: For long-running or multi-session work, write a single handoff doc (e.g. `shared/prompt/documentation/handoff.md` or root `HANDOFF.md`) with: goal, progress, what was tried, what failed, next steps. **Workflow**: create or update the handoff file before switching agent or topic; new sessions attach only that file. Optionally use `/handoff` (e.g. dx plugin) if available.
 - **Branching experiments**: When trying a different approach from a point in time, fork the conversation or record the branch point in the handoff doc.
 
 ---
 
 ## 10. Input and output
 
-- **Inaccessible or private content**: If a URL or resource cannot be fetched directly, use "select all → copy → paste" into the chat (or attach the file).
+- **Inaccessible or private content**: If a URL or resource cannot be fetched directly, use "select all → copy → paste" into the chat (or attach the file). For blocked or paywalled sites (e.g. Reddit), use a fallback (e.g. reddit-fetch skill or Gemini CLI); see `shared/prompt/documentation/tips-usage.md` if used.
 - **Output format**: Prefer Markdown for reports and docs; use a neutral format (e.g. paste via Notion) when copying to platforms that do not accept Markdown.
 - **Getting output out**: Copy from terminal, or write to a file and open in editor; use `/copy` or equivalent if the tool provides it.
 
@@ -119,7 +120,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 
 - **Single source**: Add or change rules and habits only in this file (`shared/prompt/store/context.md`). Do not duplicate in Cursor Rules or other tool configs; reference this file instead.
 - **.cursor/rules**: mdc files are for **when** to apply (e.g. always vs on-request); keep one file per apply timing. Rule text stays here only; mdc names follow §D and §E.
-- **Review**: Review this file periodically (e.g. quarterly); add repeated instructions as they appear; remove or update outdated lines.
+- **Review**: Review this file periodically (e.g. quarterly); add repeated instructions as they appear; remove or update outdated lines. Use recent conversations to propose new lines (repeated instructions from chats → candidates for context.md); optionally use a review skill (e.g. review-claudemd) if available.
 - **External tips**: Use external guides (e.g. claude-code-tips) as reference only; write only the chosen practices here.
 
 ---
