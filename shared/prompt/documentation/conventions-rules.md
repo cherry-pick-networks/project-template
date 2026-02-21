@@ -96,3 +96,10 @@ Example: `feat(module): add handler`
 ## §L. Agent and scope
 
 - Agent must not extend scope arbitrarily; propose scope doc changes for approval, then implement after update.
+
+---
+
+## §M. Root README boundary
+
+- Root README Documentation section: only domain entry points (links to scope-level READMEs, e.g. shared/README.md); no deep links to files under a scope.
+- **Check**: Root README has no links to e.g. shared/prompt/... ; only to shared/README.md (and other scope READMEs if any).

@@ -122,7 +122,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - **.cursor/rules**: mdc files are for **when** to apply (e.g. always vs on-request); keep one file per apply timing. Rule text stays here only; mdc names follow §D and §E.
 - **Review**: Review this file periodically (e.g. quarterly); add repeated instructions as they appear; remove or update outdated lines. Use recent conversations to propose new lines (repeated instructions from chats → candidates for context.md); optionally use a review skill (e.g. review-claudemd) if available.
 - **External tips**: Use external guides (e.g. claude-code-tips) as reference only; write only the chosen practices here.
-- **Human-readable docs**: Project summary and rules for people are in `shared/prompt/documentation/` (project-context.md, conventions-rules.md, reference.md). README has a Documentation section that points to them; do not duplicate rule text there.
+- **Human-readable docs**: Project summary and rules for people are in `shared/prompt/documentation/` (project-context.md, conventions-rules.md, reference.md). Root README Documentation section lists only domain entry points (e.g. shared/README.md); do not add deep links to docs there. Do not duplicate rule text in root README.
 
 ---
 
@@ -398,3 +398,13 @@ Scope-bound implementation:
 Agent and scope:
   agent must not extend scope arbitrarily; propose scope doc changes
   for human approval, then implement only after scope is updated.
+
+### §M. Root README boundary
+
+Root README (repository root README.md):
+  the Documentation section lists only domain entry points; each entry
+  links to a scope-level README (e.g. shared/README.md), not to files
+  under prefix/infix/suffix.
+Deep links:
+  do not add links from root README to individual docs (e.g. context.md,
+  handoff.md, project-context.md); those live in each domain's README.
