@@ -2,6 +2,14 @@
 
 Optional tooling and workflows from implementation-plan Phase 10. Reference only; use if the project adopts them.
 
+**Tips already in context.md**: Decompose (Tip 3 → §6), Git/gh/draft PR/worktree (Tip 4, 16 → §7), New topic → new conversation (Tip 5 → §9), Getting output out (Tip 6 → §10), Aliases/setup (Tip 7 → §5), Write–test cycle (Tip 9 → §6), Cmd+A / paste (Tip 10 → §10), Exponential backoff (Tip 17 → §8), Markdown/Notion (Tip 19, 20 → §10), realpath (Tip 24 → §8), Verify output (Tip 28 → §6), Abstraction level (Tip 32 → §11), TDD (Tip 34 → §6), Plan then prototype (Tip 39 → §6), Simplify (Tip 40 → §11).
+
+---
+
+## Slash commands (Tip 1)
+
+- When using Claude Code: useful built-ins include `/usage` (rate limits), `/mcp` (MCP servers), `/stats` (usage graph), `/clear` (fresh conversation). See claude-code-tips for full list.
+
 ---
 
 ## Status line (Tip 0)
@@ -48,6 +56,30 @@ Optional tooling and workflows from implementation-plan Phase 10. Reference only
 ## Approved commands audit (Tip 33)
 
 - Run **cc-safe** (or equivalent) on a schedule: e.g. `npx cc-safe .` before opening a PR or monthly. See context.md §7.
+
+---
+
+## Containers for long-running risky tasks (Tip 21)
+
+- For long-running or risky work (e.g. research, `--dangerously-skip-permissions`): prefer running in a container so failures are isolated. See context.md §8 for long-running jobs; use a container when the task is both long and permission-heavy.
+
+---
+
+## Interactive PR reviews (Tip 26)
+
+- Use `gh pr view` and `gh pr diff` (context.md §7) for step-by-step or file-by-file review. Ask the agent to run tests where relevant and to summarize findings. Interactive back-and-forth beats one-shot review.
+
+---
+
+## GitHub Actions / DevOps (Tip 29)
+
+- For CI failures: use `gh run view` and logs to find root cause or flakiness (context.md §7). If using Claude with dx plugin, `/dx:gha <GitHub Actions URL>` can automate investigation and suggest fixes.
+
+---
+
+## Background bash and subagents (Tip 36)
+
+- Long-running commands: run in background (e.g. Ctrl+B in Claude Code) and have the agent check later or use exponential backoff (context.md §8). When using subagents, run heavy or parallel analysis in background so the main session stays responsive.
 
 ---
 
