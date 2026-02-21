@@ -22,3 +22,6 @@ jobs:
 
       - name: Scope check
         run: deno task scope-check
+
+      - name: Audit dependencies
+        run: deno audit
