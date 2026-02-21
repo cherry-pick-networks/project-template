@@ -1,8 +1,7 @@
 ---
 description: |
   When to commit and agent procedure for multi-flag work. Commit at
-  each feature-flag boundary; output commit message at session end.
-  Apply when implementing multi-flag work or ending a session.
+  each feature-flag boundary. Apply when implementing multi-flag work or ending a session.
 alwaysApply: true
 ---
 

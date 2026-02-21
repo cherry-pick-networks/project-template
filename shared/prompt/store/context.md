@@ -159,10 +159,8 @@ Procedure for multi-flag work:
   git commit with message per this rule; (3) only after commit succeeds,
   proceed to the next unit. No batch commit at the end of the task.
 Session end:
-  at the end of every session, always output a commit message that follows
-  this rule (type[(scope)]: description; imperative, lowercase) in a fenced
-  code block so the user can copy it; do this every time, do not skip; do not
-  run git commit unless the user explicitly asks.
+  no need to output a suggested commit message; commits are made during
+  the task at each boundary. Do not run git commit unless the user explicitly asks.
 
 ### §C. Language
 

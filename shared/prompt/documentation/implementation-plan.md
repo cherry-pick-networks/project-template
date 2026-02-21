@@ -4,7 +4,7 @@
 
 - **global-directory-boundary / global-document-format / global-document-naming**: Single AI context lives under **shared/prompt/** (prefix = shared [Scope], infix = prompt [Entity]); context in **shared/prompt/store/context.md** (suffix = store [Artifact]); max 3 levels respected.
 - **system-document-boundary / system-agent-boundary**: Scope document remains the single source of truth for **modules, API routes, and infrastructure**. This plan does **not** add modules, API, or infrastructure; it only adds **shared/prompt/** and one context file. Do not add scope-bound items without updating the scope document first.
-- **global-agent-boundary**: Implement in one logical unit per phase; commit at each phase boundary. At session end, output a commit message in a fenced block (type[(scope)]: description; imperative, lowercase).
+- **global-agent-boundary**: Implement in one logical unit per phase; commit at each phase boundary.
 - **global-event-format**: Use that commit message format for every commit.
 - **global-agent-principle**: Keep the plan simple (KISS), consistent with existing conventions, and avoid speculative scope; only implement what is in current scope.
 - **global-document-constraint**: Do not add dependencies; use the project's official dependency list if any tooling is introduced later.
@@ -178,7 +178,7 @@
 - **global-event-format**: Every commit message must follow:  
   `type[(scope)]: description`  
   (imperative, lowercase; types: feat, fix, docs, chore, refactor, perf, test, ci, build).
-- At **session end**, output a suggested commit message in a fenced code block for the user to copy; do not run `git commit` unless the user asks.
+- Do not run `git commit` unless the user asks; commits are made during the task at each boundary.
 
 Example after implementing Phase 1:
 
@@ -216,4 +216,4 @@ feat(shared/prompt): add single AI context file and directory
 - **Paths**: **shared/prompt/** (shared = Scope, prompt = Entity); no `docs/`; compliant with global-directory-boundary and global-document-naming.
 - **Git/PR/CI**: Use **gh** and Git; same workflow for any AI that can run the terminal.
 - **Integrations**: Prefer **MCP** and **Playwright**; document usage in context.md.
-- **Commits**: One unit per phase; commit message per global-event-format; at session end output a commit message in a fenced block per global-agent-boundary.
+- **Commits**: One unit per phase; commit message per global-event-format.
