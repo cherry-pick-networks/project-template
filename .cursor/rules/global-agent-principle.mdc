@@ -1,4 +1,7 @@
 ---
+description: |
+  Principles the agent must follow: conventions, KISS, root cause,
+  consistency, rule file format. Apply when editing or adding rules.
 alwaysApply: true
 ---
 

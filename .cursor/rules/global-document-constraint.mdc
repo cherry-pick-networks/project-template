@@ -1,0 +1,16 @@
+---
+description: |
+  Dependency list lives in project documents (deno.json, docs).
+  Do not add deps outside the list; update the list first. Apply when
+  changing deno.json or project dependencies.
+alwaysApply: true
+---
+
+Dependency addition:
+  do not add dependencies arbitrarily; only add if (a) listed in the project
+  official dependency list, or (b) the addition meets all mandatory
+  stable-library criteria below. Agent must not extend the official list
+  without human approval.
+Official list:
+  the project maintains an official list of allowed dependencies (deno.json
+  imports and optionally docs); new entries require updating that list first.

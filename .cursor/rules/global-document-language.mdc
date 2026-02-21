@@ -1,0 +1,9 @@
+---
+description: |
+  Language for documents and code (comments, docstrings, UI/log
+  strings, docs). Apply to all project artifacts.
+alwaysApply: true
+---
+
+Language:
+  English only for code, comments, docstrings, UI/log strings, docs.

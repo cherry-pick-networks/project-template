@@ -1,0 +1,27 @@
+---
+description: |
+  Rule file document format: [prefix]-[suffix].mdc or
+  [prefix]-[infix]-[suffix].mdc. Apply when creating or renaming
+  .cursor/rules *.mdc and directory structure.
+alwaysApply: true
+---
+
+Pattern:
+  use [prefix]-[suffix].mdc or [prefix]-[infix]-[suffix].mdc;
+  prefix and suffix required; infix optional.
+Segment form:
+  lowercase; separate words with one hyphen; no underscores;
+  suffix singular (except types); descriptive, pronounceable, searchable.
+Axis rule:
+  each segment uses exactly one axis from its allowed set;
+  no axis pollution; one word must not appear in two axes.
+New rule files:
+  pick one prefix from Scope/Layer/Context; one suffix from
+  Artifact/Policy/Meta; add infix from Actor/Action/Entity only when
+  the rule applies to a specific focus.
+
+Directory structure (max 3 levels; segment order):
+  level 1: folder name from approved prefix (required);
+  level 2: folder name from approved infix (optional);
+  level 3: folder name from approved suffix (optional).
+  Order: prefix / infix / suffix; do not add a fourth level.

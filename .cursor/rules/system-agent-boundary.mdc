@@ -1,0 +1,11 @@
+---
+description: |
+  Agent must not extend project scope arbitrarily; propose scope doc
+  changes for human approval, then implement. Apply when adding
+  modules, API routes, or infrastructure.
+alwaysApply: true
+---
+
+Agent and scope:
+  agent must not extend scope arbitrarily; propose scope doc changes
+  for human approval, then implement only after scope is updated.
