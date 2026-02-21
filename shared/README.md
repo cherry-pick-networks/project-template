@@ -8,7 +8,7 @@ Scope for project-wide context, conventions, and tooling. Start here for prompts
 |------|---------|
 | [prompt/store/context.md](prompt/store/context.md) | **Single source of truth** for AI and tooling (rules, conventions, workflow). Attach this file for new sessions. |
 | [prompt/documentation/](prompt/documentation/) | Human-readable docs: project summary, rules, reference, handoff, scope. |
-| [prompt/scripts/](prompt/scripts/) | Optional tooling (e.g. context-bar, setup). See [tips-usage.md](prompt/documentation/tips-usage.md). |
+| [prompt/scripts/](prompt/scripts/) | Optional tooling (context-bar, setup, scope-check). See [tips-usage.md](prompt/documentation/tips-usage.md). |
 
 ## Quick links
 

@@ -53,6 +53,7 @@ All tools and models should use this file only; do not duplicate these rules in 
 - `deno task dev` — start dev server with watch
 - `deno run --allow-net --unstable-kv main.ts` — run server once
 - `deno test` — run tests
+- `deno task scope-check` — verify API routes are listed in shared/prompt/documentation/scope.md (runs in CI)
 - `gh pr create --draft` — create draft PR (review before marking ready)
 - `gh pr view`, `gh pr diff` — inspect PR for review
 - `gh run view` — inspect CI run (e.g. after failure)
